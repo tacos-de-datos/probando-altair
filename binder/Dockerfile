@@ -9,7 +9,7 @@ RUN wget "https://gist.githubusercontent.com/ziadoz/3e8ab7e944d02fe872c3454d17af
 RUN chmod +x ./install.sh
 RUN apt-get update && apt-get install -y gnupg2
 RUN sudo apt install curl
-RUN ./install.sh
+RUN ./install.sh && rm -rf install.sh
 
 USER $NB_UID
 RUN conda install -c conda-forge selenium --quiet -y
